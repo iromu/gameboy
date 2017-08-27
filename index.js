@@ -1,8 +1,9 @@
-var Emitter = require('emitter')
+const Emitter = require('events').EventEmitter
+
 var debug = require('debug')('gameboy')
 
 module.exports = GameBoyCore
-
+GameBoyCore.prototype.__proto__ = Emitter.prototype
 /*
  * JavaScript GameBoy Color Emulator
  * Copyright (C) 2010 - 2012 Grant Galitz
@@ -300,7 +301,7 @@ function GameBoyCore(canvas, ROMImage, opts) {
     this.intializeWhiteNoise()
 }
 
-Emitter(GameBoyCore.prototype)
+// Emitter(GameBoyCore.prototype)
 
 GameBoyCore.prototype.GBBOOTROM = [   //GB BOOT ROM
                                       //Add 256 byte boot rom here if you are going to use it.
