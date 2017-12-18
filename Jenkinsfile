@@ -16,18 +16,6 @@ node('node') {
           sh 'yarn install'
         }
 
-       stage('Build'){
-         env.NODE_ENV = "test"
-         sh 'node -v'
-         sh 'yarn build'
-       }
-
-       stage('Test'){
-         env.NODE_ENV = "test"
-         sh 'yarn test'
-
-       }
-
        stage('Link'){
          env.NODE_ENV = "test"
          sh 'yarn link'
