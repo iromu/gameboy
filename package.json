@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "gameboy emulator by grantgalitz",
   "dependencies": {
-    "canvas": "^1.6.7",
+    "canvas": "1.6.7",
     "debug": "^3.0.1"
   }
 }
